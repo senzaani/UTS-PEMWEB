@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasi Goreng Pak Gento</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container"> 
+        <!-- Navbar -->
+        <header>
+            <div class="navbar">
+                <div class="logo" onclick="navigateToHome()">Nasi Goreng Pak Gento</div>
+                <nav class="nav-links">
+                    <a href="#" onclick="navigateToMenu()">Menu</a>
+                    <a href="#" onclick="navigateToTentangKami()">Tentang Kami</a>
+                    <a href="#" onclick="navigateToKontak()">Kontak</a>
+                </nav>
+                <div id="cart-icon" class="cart-icon" onclick="navigateToCart()" style="display: none;">
+                    <span class="cart-emoji">🛒</span>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Halaman Utama -->
+        <main id="halaman-utama">
+            <section class="content">
+                <h1>Pemburu Nasgor</h1>
+                <p>Nasgor datang lapar hilang</p>
+                <button class="cta-button" onclick="navigateToMenu()">Makan Sekarang</button>
+            </section>
+            <section class="image-section">
+                <img src="./asset/nasi-goreng.png" alt="Nasi Goreng Pak Gento">
+            </section>
+        </main>
+
+        <!-- Halaman Menu -->
+        <div class="menu-container" id="menu" style="display: none;">
+            <div class="menu-header">
+                <h2>Daftar Menu</h2>
+            </div>
+            <div class="menu-content">
+                <div class="menu-grid">
+                    <div class="menu-item" onclick="addToCart('Nasi Goreng Jawa', 15000)">
+                        <img src="./asset/path-to-nasgor-jawa.jpg" alt="Nasi Goreng Jawa">
+                        <p>Nasi Goreng Jawa</p>
+                        <p>Rp 15,000</p>
+                    </div>
+                    <div class="menu-item" onclick="addToCart('Nasi Goreng Mawut', 18000)">
+                        <img src="./asset/path-to-nasgor-mawut.jpg" alt="Nasi Goreng Mawut">
+                        <p>Nasi Goreng Mawut</p>
+                        <p>18,000</p>
+                    </div>
+                    <div class="menu-item" onclick="addToCart('Nasi Goreng Seafood', 25000)">
+                        <img src="./asset/path-to-nasgor-seafood.jpg" alt="Nasi Goreng Seafood">
+                        <p>Nasi Goreng Seafood</p>
+                        <p>25,000</p>
+                    </div>
+                    <div class="menu-item" onclick="addToCart('Nasi Goreng Spesial', 20000)">
+                        <img src="./asset/path-to-nasgor-spesial.jpg" alt="Nasi Goreng Spesial">
+                        <p>Nasi Goreng Spesial</p> 
+                        <p>Rp 20,000</p>
+                    </div>
+                    <div class="menu-item" onclick="addToCart('Es Teh', 5000)">
+                        <img src="./asset/path-to-Es-teh.jpg" alt="Es Teh">
+                        <p>Es Teh</p>
+                        <p>5,000</p>
+                    </div>
+                    <div class="menu-item" onclick="addToCart('Teh Hangat', 5000)">
+                        <img src="./asset/path-to-Teh-Hangat.jpg" alt="Teh Hangat">
+                        <p>Teh Hangat<p>
+                        <p>Rp 5,000</p>
+                    </div>
+                    <div class="menu-item" onclick="addToCart('Es Jeruk', 7000)">
+                        <img src="./asset/path-to-Es-Jeruk.jpg" alt="Es Jeruk">
+                        <p>Es Jeruk<p>
+                        <p>Rp 7,000</p>
+                    </div>
+                    <div class="menu-item" onclick="addToCart('Jeruk Hangat', 7000)">
+                        <img src="./asset/path-to-Jeruk-Hangat.jpg" alt="Jeruk Hangat">
+                        <p>Jeruk Hangat</p>
+                        <p>Rp 7,000</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Halaman Tentang Kami -->
+        <div id="tentang-kami" style="display: none;">
+            <section class="content">
+                <h2>Tentang Kami</h2>
+                <p>Self-Service merupakan metode pemesanan menu dari Nasi Goreng pak Gento yang memungkinkan pelanggan 
+                    memilih menu makanan dan minuman secara mandiri melalui perangkat digital seperti layar sentuh atau
+                    aplikasi ponsel. pelanggan bisa melihat menu nasi goreng 
+                    yang tersedia dan memilih variasi yang diinginkan. 
+                    Setelah memilih, pelanggan melakukan pembayaran digital, baik melalui 
+                    tunai mataupun Qris. Pesanan kemudian langsung diterima oleh dapur untuk diproses. 
+                    Metode ini meningkatkan efisiensi, mengurangi antrean, dan memberi pengalaman pemesanan yang 
+                    praktis dan cepat bagi pelanggan.</p>
+                <p>Sejak 2024, kami telah melayani berbagai pelanggan dengan menggunakan metode self-service. 
+                    Kami berkomitmen untuk memberikan pengalaman kuliner yang memuaskan.</p>
+            </section>
+        </div>
+
+        <!-- Halaman Kontak -->
+        <div id="kontak" style="display: none;">
+            <section class="content">
+                <h2>Kontak Kami</h2>
+                <p>Jika Anda memiliki pertanyaan atau ingin melakukan pemesanan khusus, silakan hubungi kami:</p>
+                <ul>
+                    <li><strong>Telepon:</strong> +62 857 0660 1904</li>
+                </ul>
+                <p>Dafanza Razkahadi Kusuma</p>
+                <p>Aditya Senzani Wahdan Rozaq</p>
+                <p>Mochammad Dani Nasrulloh</p>
+            </section>
+        </div>
+        
+        <!-- Daftar Pesanan (Keranjang) -->
+        <div class="order-list" id="order-list" style="display: none;">
+            <h2>Daftar Pesanan</h2>
+            <div id="order-items" class="order-items-list"></div>
+            <div class="total-price" id="total-price">Total: Rp 0</div>
+            <a href="pembayaran.html" class="pay-button">Bayar Sekarang</a>
+            <br>
+            <button class="close-button" onclick="toggleOrderList()">Tutup</button>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Pemburu Nasgor.</p>
+        </footer>
+    </div>
+
+    <script src="./scripts.js"></script>
+</body>
+</html>

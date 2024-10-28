@@ -1,0 +1,475 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya dasar untuk body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a60061;
+    color: #a60061;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #a60061;
+    cursor: pointer;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #a60061;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f78be7;
+}
+
+/* Ikon keranjang */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.cart-emoji {
+    font-size: 30px;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 14px;
+}
+
+/* Kontainer utama */
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Halaman Utama */
+.image-section img {
+    max-width: 370px; /* Atur lebar maksimum gambar */
+    width: auto;      /* Pastikan gambar berskala sesuai kontainer */
+    height: auto;     /* Memastikan gambar proporsional */
+    border-radius: 10px;
+    margin-top: 50px; /* Jarak atas untuk pemisahan */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 50px;
+    color: #fbffff;
+    margin-bottom: 10px;
+}
+
+.content p {
+    font-size: 20px;
+    color: #fcfbfc;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 15px 20px;
+    background-color: #fdfdfc;
+    border: none;
+    color: #a60061;
+    border-radius: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #f78be7;
+}
+
+/* Halaman Menu */
+.menu-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+    margin-top: 10px;
+}
+
+.menu-header h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Memusatkan dan menyesuaikan tampilan Tentang Kami dan Kontak */
+#tentang-kami, #kontak {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;  /* Auto untuk memusatkan di horizontal */
+    max-width: 600px;   /* Ukuran maksimal lebar */
+    border-radius: 10px;
+    display: none;      /* Tetap tidak tampil sampai JavaScript menampilkannya */
+}
+
+/* Style judul dan teks di bagian Tentang Kami dan Kontak */
+#tentang-kami h2, #kontak h2 {
+    font-size: 24px;
+    color: #a60061;
+    margin-bottom: 10px;
+    text-align: center; /* Teks judul di tengah */
+}
+
+#tentang-kami p, #kontak p, #kontak ul {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.6;
+    text-align: center; /* Teks paragraf di tengah */
+}
+
+#kontak ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Teks daftar di tengah */
+}
+
+#kontak ul li {
+    margin-bottom: 8px;
+}
+
+#kontak ul li strong {
+    font-weight: bold;
+    color: #a60061;
+}
+
+
+/* Kotak menu */
+.menu-item {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    height: 300px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.menu-item p {
+    padding: 10px;
+    color: #333333;
+    font-weight: bold;
+}
+
+/* Daftar Pesanan (Keranjang) */
+.order-list {
+    display: none; /* Diubah untuk ditampilkan dengan JavaScript */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    width: 90%; /* Lebar keranjang diubah agar responsif */
+    max-width: 400px; /* Max width untuk desktop */
+    max-height: 400px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.order-item {
+    padding: 15px;
+    background-color: #f7f7f7;
+    color: #333333;
+    border-bottom: 1px solid #dddddd;
+}
+
+.order-item:last-child {
+    border-bottom: none; /* Menghapus border bawah pada item terakhir */
+}
+
+.total-price {
+    font-size: 1.4em; /* Menambah ukuran font total harga */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #a60061;
+}
+
+/* Tombol pada keranjang */
+.pay-button {
+    font-size: 15px;
+    background-color: #a60061;
+    color: white;
+    padding: 12px; /* Menambah padding untuk tampilan yang lebih baik */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 300%;
+    height: 50%;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+.close-button {
+    font-size: 15px;
+    background-color: #a60061;
+    color: white;
+    padding: 12px; /* Menambah padding untuk tampilan yang lebih baik */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 37%;
+    height: 50%;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.pay-button:hover,
+.close-button:hover {
+    background-color: #f78be7;
+    
+}
+
+/* Halaman Pembayaran */
+.payment-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.payment-container h2 {
+    color: #a60061;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.invoice-details {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: left;
+}
+
+/* Total Invoice */
+.invoice-total {
+    font-size: 1.4em; /* Menambah ukuran font total harga */
+    font-weight: bold;
+    margin-top: 10px;
+    color: #a60061;
+    text-align: center; /* Rata kanan untuk penampilan yang lebih baik */
+}
+
+/* Metode Pembayaran */
+.payment-methods label {
+    font-size: 1.1em;
+    color: #333;
+    margin: 0 10px;
+}
+
+/* QR Code Section */
+.qr-code-section {
+    margin-top: 15px;
+    display: none;
+}
+
+.qr-code-section p {
+    color: #333;
+}
+
+.qr-code-section img {
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+/* Tombol Konfirmasi Pembayaran */
+.confirm-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px; /* Menambah padding untuk tampilan yang lebih baik */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    width: 100%; /* Lebar penuh untuk tombol */
+}
+
+.confirm-button:hover {
+    background-color: #45a049;
+}
+
+/* Animasi Pembayaran Berhasil */
+.success-animation {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #4CAF50;
+}
+
+.checkmark {
+    width: 56px;
+    height: 56px;
+    position: relative;
+    display: inline-block;
+}
+
+.checkmark-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: popCircle 0.3s ease;
+}
+
+.checkmark-stem,
+.checkmark-kick {
+    height: 5px;
+    background-color: white;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.checkmark-stem {
+    width: 18px;
+    top: 28px;
+    left: 14px;
+    transform: rotate(45deg);
+    animation: drawStem 0.3s 0.3s ease forwards;
+}
+
+.checkmark-kick {
+    width: 10px;
+    top: 34px;
+    left: 32px;
+    transform: rotate(-45deg);
+    animation: drawKick 0.3s 0.3s ease forwards;
+}
+
+@keyframes popCircle {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes drawStem {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 18px;
+    }
+}
+
+@keyframes drawKick {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 10px;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff; /* Warna latar belakang */
+    padding: 10px; /* Ruang di dalam footer */
+    text-align: center; /* Rata tengah teks */
+    border-top: 1px solid #a60061; /* Garis atas footer */
+    color: #a60061; /* Warna teks */
+    font-size: 16px; /* Ukuran font */
+    width: 100%; /* Lebar penuh */
+    position: relative; /* Posisi relatif agar footer tetap di bawah */
+    margin-top: auto; /* Mengatur margin atas untuk footer */
+}
+
+footer p {
+    margin: 0; /* Menghapus margin default */
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 14px; /* Ukuran font lebih kecil pada perangkat kecil */
+        padding: 8px; /* Ruang dalam lebih kecil pada perangkat kecil */
+    }
+}
+

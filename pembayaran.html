@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Invoice Pesanan Anda</h2>
+        <div id="invoice-details" class="invoice-details">
+            <!-- Item Pesanan akan di-render di sini oleh JavaScript -->
+        </div>
+        <div class="invoice-total" id="invoice-total">Total: Rp 0</div>
+
+        <h3>Pilih Metode Pembayaran</h3>
+        <div class="payment-methods">
+            <input type="radio" id="tunai" name="payment-method" value="tunai" onclick="hideQRCode()" checked>
+            <label for="tunai">Tunai</label>
+            <br>
+            <input type="radio" id="qris" name="payment-method" value="qris" onclick="showQRCode()">
+            <label for="qris">QRIS</label>
+        </div>
+
+        <div id="qr-code" class="qr-code-section" style="display: none;">
+            <p>Scan QR Code untuk melakukan pembayaran:</p>
+            <img src="asset/path-to-your-qr-code.jpg" alt="QR Code">
+        </div>
+
+        <button class="confirm-button" onclick="proceedPayment()">Konfirmasi Pembayaran</button>
+        <div id="success-animation" class="success-animation" style="display: none;">
+            <p>Pembayaran Berhasil!</p>
+            <div class="checkmark">
+                <div class="checkmark-circle"></div>
+                <div class="checkmark-stem"></div>
+                <div class="checkmark-kick"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
