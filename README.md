@@ -29,6 +29,11 @@ Selamat datang di **Pemburu Nasgor**! Website ini merupakan sistem self-service 
    git clone https://github.com/username/pemburu-nasgor.git
 
 
-## link website
+## Anggota Kelompok
+Dafanza Razkahadi Kusuma (23091397036)
+Aditya Senzani Wahdan Rozaq (23091397062)
+Mochammad Dani Nasrulloh (23091397065)
+
+## Link website
 https://senzaani.github.io/UTS-PEMWEB
 
